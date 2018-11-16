@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<title>Register account</title>
+	</head>
+
+<body>
+	<form action="register.php" method="post" />
+Enter name: <input type="text" name="name" id="name"/><span id="nerr"></span><br/>
+Enter email: <input type="email" name="email" id="email" /><span id="eerr"></span><br/>
+Enter mobile: <input type="text" name="mobile" id="mobile" /><span id="mberr"></span><br/>
+Enter date of birth: 
+<select name="day" id="day">
+	<?php
+	$i=1;
+	while($i<=31)
+	{
+		?>
+		<option value="<?php echo $i; ?>"><?php	echo $i; ?></option>
+		<?php
+		$i++;
+	}
+	?>
+</select><span id="derr"></span>
+<select name="month" id="month"></select>
+<select name="year" id="year"></select>
+Enter password: <input type="password" name="password" id="password" /><br/>
+<input type="submit" name="register" value="Register" />
+</form>
+<script type="text/javascript">
+function validate()
+{
+	var err=true;
+	var name=document.getElementById('name').value;
+	var email=document.getElementById('email').value;
+	var mobile=document.getElementById('mobile').value;
+	var password=document.getElementById('password').value;
+	var day=document.getElementById('day').value;
+	var month=document.getElementById('month').value;
+	var year=document.getElementById('year').value;
+	if()
+}
+
+</script>
+<body>
+	</html>
