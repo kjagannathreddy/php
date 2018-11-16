@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<div id="mp"> </div>
+<input type="text" id="uname" />
+<input type="button" value="Ajax test" onclick="testajax();" />
+<script>
+function testajax()
+{
+	var name=document.getElementById('uname').value;
+	if(window.XMLHttpRequest)
+		var obj=new XMLHttpRequest;
+	else
+		var obj=new ActiveXObject('Microsoft.XMLHTTP');
+	obj.open('GET','welcometo.php?name='+name,true);
+	obj.send();
+	obj.onreadystatechange=function(){
+		if(obj.readyState==4)
+		{
+			document.getElementById('mp').innerHTML=obj.responseText;
+		}
+		if(obj.readyState==3)
+		{
+			document.getElementById('mp').innerHTML="Waiting";
+		}
+	}
+}
+</script>
+</body>
+</html>
